@@ -4,6 +4,11 @@
 package unittestdemo;
 
 public class App {
+
+    public App(GreetingGenerator greetingGenerator) {
+
+    }
+
     public String getGreeting() {
         return "Hello World!";
     }
