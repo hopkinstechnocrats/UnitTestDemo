@@ -5,10 +5,19 @@ package unittestdemo;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.*;
+import unittestdemo.GreetingGenerator;
 
 public class AppTest {
     @Test public void testAppHasAGreeting() {
-        App classUnderTest = new App();
+        App classUnderTest = new App(new GreetingGenerator());
         assertNotNull("app should have a greeting", classUnderTest.getGreeting());
+    }
+
+    @Test public void testAppUsesGreetingGenerator() {
+        GreetingGenerator greetingGenerator = mock(GreetingGenerator.class);
+        App classUnderTest = new App(greetingGenerator);
+        classUnderTest.getGreeting();
+        verify(greetingGenerator).getGreeting();
     }
 }
