@@ -6,7 +6,6 @@ package unittestdemo;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
-import unittestdemo.GreetingGenerator;
 
 public class AppTest {
     @Test public void testAppUsesGreetingGenerator() {
