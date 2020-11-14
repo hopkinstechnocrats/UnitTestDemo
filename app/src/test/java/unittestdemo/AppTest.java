@@ -9,9 +9,14 @@ import static org.mockito.Mockito.*;
 
 public class AppTest {
     @Test public void testAppUsesGreetingGenerator() {
-        GreetingGenerator greetingGenerator = mock(GreetingGenerator.class);
-        App classUnderTest = new App(greetingGenerator);
-        classUnderTest.getGreeting();
-        verify(greetingGenerator).getGreeting();
+        // Arrange
+        GreetingGenerator mockGreetingGenerator = mock(GreetingGenerator.class); 
+        App classUnderTest = new App(mockGreetingGenerator); 
+
+        // Act
+        classUnderTest.getGreeting(); 
+
+        // Assert
+        verify(mockGreetingGenerator).getGreeting(); 
     }
 }
