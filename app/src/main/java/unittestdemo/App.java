@@ -5,12 +5,14 @@ package unittestdemo;
 
 public class App {
 
+    GreetingGenerator greetingGenerator;
+
     public App(GreetingGenerator greetingGenerator) {
-    
+        this.greetingGenerator = greetingGenerator;
     }
 
     public String getGreeting() {
-        return "Hello World";
+        return greetingGenerator.getGreeting();
     }
 
     public static void main(String[] args) {
