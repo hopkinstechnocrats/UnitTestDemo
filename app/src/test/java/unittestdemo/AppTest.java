@@ -4,11 +4,16 @@
 package unittestdemo;
 
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 public class AppTest {
     @Test public void testAppHasAGreeting() {
-        App classUnderTest = new App();
-        assertNotNull("app should have a greeting", classUnderTest.getGreeting());
+        // Arrange
+        App classUnderTest = new App(); // Creates an instance of App to run the test on
+
+        // Act
+        String output = classUnderTest.getGreeting(); // Calls the function being tested and stores the ouput in the output variable.
+
+        // Assert
+        assert output != null; // Does nothing if true, throws an AssertionError if false.
     }
 }
